@@ -9190,26 +9190,30 @@ jQuery.ajax = (function(_ajax){
 
 
 $(document).ready(function(){
-  var resp = '';
-  var grr = '';
-  var x = '';
 
   var something = function(url){
+
+    if (url.indexOf("http://") == -1) {
+      url = 'http://' + url;
+    }
+
     $('#results').text('loading...');
-    $.get(url,
-          function(data){
-            x = data;
-            resp = data.responseText;
-            grr = $.parseHTML(resp);
+    $.get(url, function(data){
+            resp = $.parseHTML(data.responseText);
             $('#results').html('');
-            $(['druid','hunter','mage_13','rogue','warlock','warrior','priest','paladin','shaman']).map(function(){ return [[ ""+this, $(grr).find(".round1").find("img[src*='" + this + "']").length ]]; }).sort(function(a,b){ return b[1]-a[1]; }).each(function(){ 
+            $(['druid','hunter','mage_13','rogue','warlock','warrior','priest','paladin','shaman']).map(function(){ return [[ ""+this, $(resp).find(".round1").find("img[src*='" + this + "']").length ]]; }).sort(function(a,b){ return b[1]-a[1]; }).each(function(){
               $('#results').append(this[0] + ":" + this[1] + "<br>")
               console.log(this[0],this[1])
             });
           }
          );
   }
-  $('#do_it_faggot').on('click', function(){something($('#fagsource').val())} );
+
+  $('#some_form').on('submit', function(){
+    something($('#some_textfield').val())
+    event.preventDefault();
+  } );
+
 })
 
 ;

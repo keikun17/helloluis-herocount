@@ -8,15 +8,18 @@
   <body>
     <div class='container'>
       <section id='header'>
-        Logic stuff from <a href="https://gist.github.com/helloluis/9846306">Luis (lemniscate#6608)</a>
-        <br>
-        Thingy webified by <a href="http://www.twitter.com/keikun17">@keikun17</a>
+        <h1>Hearthstone Challonge Tourney Hero Counter</h1>
+        <p>Paste challonge URL, Get hero distribution</p>
+        <small>
+          Logic stuff from <a href="https://gist.github.com/helloluis/9846306">Luis (lemniscate#6608)</a>.
+          Thingy webified by <a href="http://www.twitter.com/keikun17">@keikun17</a> Make this look pretty, <a href="http://www.github.com/keikun17/helloluis-herocount">Fork this</a> on Github
+        </small>
       </section>
       <hr>
-      <input id='fagsource' placeholder='challonge url' type='text'>
-      <button id='do_it_faggot'>
-        Fetch
-      </button>
+      <form id='some_form'>
+        <input id='some_textfield' placeholder='challonge url' type='text'>
+        <input value="Fetch" type="submit" />
+      </form>
       <div id='results'></div>
     </div>
   </body>
