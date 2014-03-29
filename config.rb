@@ -63,12 +63,13 @@ configure :build do
   # activate :asset_hash
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
+  set :relative_links, true
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
 
-after_configuration do 
+after_configuration do
   sprockets.append_path File.join "#{root}", 'source/components'
 end
