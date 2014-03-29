@@ -1,13 +1,18 @@
 %section#header
-  Logic stuff from #{link_to 'Luis (lemniscate#6608)', 'https://gist.github.com/helloluis/9846306'}
-  %br
-  Thingy webified by #{link_to '@keikun17', 'http://www.twitter.com/keikun17'}
+  %h1 Hearthstone Challonge Tourney Hero Counter
+  %p Paste challonge URL, Get hero distribution
+
+  %small
+    Logic stuff from #{link_to 'Luis (lemniscate#6608)', 'https://gist.github.com/helloluis/9846306'}.
+    Thingy webified by #{link_to '@keikun17', 'http://www.twitter.com/keikun17'} Make this look pretty, #{link_to "Fork this", 'http://www.github.com/keikun17/helloluis-herocount'} on Github
 
 %hr
 
-%input#fagsource{type: 'text' , placeholder: 'challonge url'}
-%button#do_it_faggot
-  Fetch
+%form#do_it_faggot
+  %input#fagsource{type: 'text' , placeholder: 'challonge url'}
+  = submit_tag "Fetch"
+  -# %button#do_it_faggot
+  -#   Fetch
 
 #results
 
